@@ -3,7 +3,7 @@ namespace blend;
 
 class catalogue extends \Blend
 {
-    public $label = 'Catalogue';
+    public $label = 'Items';
     public $printable = true;
     public $linetypes = ['catalogueitem'];
 
