@@ -9,7 +9,7 @@ class catalogueitem extends \linetype\skumeta
 
         $this->label = 'tag';
         $this->label = 'Catalogue Item';
-        $this->clause = 'catalogue.price is not null';
+        $this->clauses = ['catalogue.price is not null'];
         $this->inlinelinks = [
             (object)[
                 'tablelink' => 'skumetacatalogue',
