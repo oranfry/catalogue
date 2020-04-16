@@ -1,5 +1,5 @@
 <?php
-namespace linetype;
+namespace catalogue\linetype;
 use Config;
 
 class sale extends \Linetype

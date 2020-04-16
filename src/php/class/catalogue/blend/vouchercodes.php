@@ -1,5 +1,5 @@
 <?php
-namespace blend;
+namespace catalogue\blend;
 
 class vouchercodes extends \Blend
 {

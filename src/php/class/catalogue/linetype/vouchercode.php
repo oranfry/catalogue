@@ -1,5 +1,5 @@
 <?php
-namespace linetype;
+namespace catalogue\linetype;
 
 class vouchercode extends \Linetype
 {

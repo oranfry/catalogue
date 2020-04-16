@@ -1,5 +1,5 @@
 <?php
-namespace linetype;
+namespace catalogue\linetype;
 
 class catalogueitem extends \linetype\skumeta
 {
