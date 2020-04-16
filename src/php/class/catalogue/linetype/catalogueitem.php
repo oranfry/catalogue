@@ -1,7 +1,7 @@
 <?php
 namespace catalogue\linetype;
 
-class catalogueitem extends \linetype\skumeta
+class catalogueitem extends \stockkeeping\linetype\skumeta
 {
     public function __construct()
     {
