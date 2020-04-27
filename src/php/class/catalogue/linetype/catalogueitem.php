@@ -22,7 +22,6 @@ class catalogueitem extends \stockkeeping\linetype\skumeta
 
     public function validate($line)
     {
-        kayoh_dump($line);
         $errors = parent::validate($line);
 
         if ($line->price == null) {
