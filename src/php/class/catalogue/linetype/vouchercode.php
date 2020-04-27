@@ -12,43 +12,43 @@ class vouchercode extends \Linetype
             (object) [
                 'name' => 'code',
                 'type' => 'text',
-                'fuse' => 't.code',
+                'fuse' => '{t}.code',
             ],
             (object) [
                 'name' => 'used',
                 'type' => 'text',
                 'constrained' => true,
-                'fuse' => "if (t.used = 1, 'yes', 'no')",
+                'fuse' => "if ({t}.used = 1, 'yes', 'no')",
             ],
             (object) [
                 'name' => 'sku',
                 'type' => 'text',
-                'fuse' => 't.sku',
+                'fuse' => '{t}.sku',
             ],
             (object) [
                 'name' => 'quantity',
                 'type' => 'number',
-                'fuse' => 't.quantity',
+                'fuse' => '{t}.quantity',
             ],
             (object) [
                 'name' => 'nzd',
                 'type' => 'number',
-                'fuse' => 't.nzd',
+                'fuse' => '{t}.nzd',
             ],
             (object) [
                 'name' => 'pickup',
                 'type' => 'number',
-                'fuse' => 't.pickup',
+                'fuse' => '{t}.pickup',
             ],
         ];
 
         $this->unfuse_fields = [
-            't.code' => ':code',
-            't.used' => "if (:used = 'yes', 1, 0)",
-            't.sku' => ':sku',
-            't.quantity' => ':quantity',
-            't.nzd' => ':nzd',
-            't.pickup' => ':pickup',
+            '{t}.code' => ':{t}_code',
+            '{t}.used' => "if (:{t}_used = 'yes', 1, 0)",
+            '{t}.sku' => ':{t}_sku',
+            '{t}.quantity' => ':{t}_quantity',
+            '{t}.nzd' => ':{t}_nzd',
+            '{t}.pickup' => ':{t}_pickup',
         ];
     }
 

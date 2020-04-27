@@ -17,60 +17,60 @@ class sale extends \Linetype
             (object) [
                 'name' => 'date',
                 'type' => 'date',
-                'fuse' => 't.date',
+                'fuse' => '{t}.date',
                 'main' => true,
             ],
             (object) [
                 'name' => 'orderid',
                 'type' => 'text',
-                'fuse' => 't.orderid',
+                'fuse' => '{t}.orderid',
             ],
             (object) [
                 'name' => 'name',
                 'type' => 'text',
-                'fuse' => 't.name',
+                'fuse' => '{t}.name',
             ],
             (object) [
                 'name' => 'email',
                 'type' => 'text',
-                'fuse' => 't.email',
+                'fuse' => '{t}.email',
             ],
             (object) [
                 'name' => 'street',
                 'type' => 'text',
-                'fuse' => 't.street',
+                'fuse' => '{t}.street',
             ],
             (object) [
                 'name' => 'suburb',
                 'type' => 'text',
-                'fuse' => 't.suburb',
+                'fuse' => '{t}.suburb',
             ],
             (object) [
                 'name' => 'postcode',
                 'type' => 'text',
-                'fuse' => 't.postcode',
+                'fuse' => '{t}.postcode',
             ],
             (object) [
                 'name' => 'currency',
                 'type' => 'text',
-                'fuse' => 't.currency',
+                'fuse' => '{t}.currency',
             ],
             (object) [
                 'name' => 'txid',
                 'type' => 'text',
-                'fuse' => "t.txid",
+                'fuse' => "{t}.txid",
             ],
         ];
         $this->unfuse_fields = [
-            't.date' => ':date',
-            't.orderid' => ':orderid',
-            't.name' => ':name',
-            't.email' => ':email',
-            't.street' => ':street',
-            't.suburb' => ':suburb',
-            't.postcode' => ':postcode',
-            't.currency' => ':currency',
-            't.txid' => ":txid",
+            '{t}.date' => ':{t}_date',
+            '{t}.orderid' => ':{t}_orderid',
+            '{t}.name' => ':{t}_name',
+            '{t}.email' => ':{t}_email',
+            '{t}.street' => ':{t}_street',
+            '{t}.suburb' => ':{t}_suburb',
+            '{t}.postcode' => ':{t}_postcode',
+            '{t}.currency' => ':{t}_currency',
+            '{t}.txid' => ":{t}_txid",
         ];
         $this->children = [
             (object) [
