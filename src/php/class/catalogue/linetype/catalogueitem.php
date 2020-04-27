@@ -9,31 +9,21 @@ class catalogueitem extends \stockkeeping\linetype\skumeta
 
         $this->label = 'tag';
         $this->label = 'Catalogue Item';
-        $this->clauses = ['{t}_catalogue.price is not null'];
-        $this->inlinelinks = [
-            (object)[
-                'tablelink' => 'skumetacatalogue',
-                'linetype' => 'skumeta',
-                'alias' => 'catalogue',
-            ],
-        ];
+        $this->clauses = ['{t}.price is not null'];
         $this->fields[] = (object) [
             "name" => "price",
             "type" => "number",
             "dp" => 2,
-            'fuse' => '{t}_catalogue.price',
+            'fuse' => '{t}.price',
             'hide' => true,
         ];
-        $this->unfuse_fields['{t}_catalogue.price'] = ':price';
+        $this->unfuse_fields['{t}.price'] = ':{t}_price';
     }
 
     public function validate($line)
     {
-        $errors = [];
-
-        if ($line->sku == null) {
-            $errors[] = 'no sku';
-        }
+        kayoh_dump($line);
+        $errors = parent::validate($line);
 
         if ($line->price == null) {
             $errors[] = 'no price';
