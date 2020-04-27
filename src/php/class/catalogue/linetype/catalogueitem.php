@@ -9,7 +9,7 @@ class catalogueitem extends \stockkeeping\linetype\skumeta
 
         $this->label = 'tag';
         $this->label = 'Catalogue Item';
-        $this->clauses = ['catalogue.price is not null'];
+        $this->clauses = ['{t}_catalogue.price is not null'];
         $this->inlinelinks = [
             (object)[
                 'tablelink' => 'skumetacatalogue',
@@ -21,10 +21,10 @@ class catalogueitem extends \stockkeeping\linetype\skumeta
             "name" => "price",
             "type" => "number",
             "dp" => 2,
-            'fuse' => 'catalogue.price',
+            'fuse' => '{t}_catalogue.price',
             'hide' => true,
         ];
-        $this->unfuse_fields['catalogue.price'] = ':price';
+        $this->unfuse_fields['{t}_catalogue.price'] = ':price';
     }
 
     public function validate($line)

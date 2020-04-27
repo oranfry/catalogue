@@ -87,7 +87,7 @@ class vouchercode extends \Linetype
         return $errors;
     }
 
-    public function astext($line, $child_sets)
+    public function astext($line)
     {
         $skumetas = get_sku_meta();
 
@@ -111,7 +111,7 @@ class vouchercode extends \Linetype
         if ($line->pickup) {
             $things[] = "place a pickup order";
         }
-        
+
         $printout .= wordwrap("Entitles the bearer to " . implode(', ', $things), 40) . "\n";
 
         return $printout;
