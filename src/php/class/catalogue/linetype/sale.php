@@ -60,6 +60,13 @@ class sale extends \Linetype
                 'type' => 'text',
                 'fuse' => "{t}.txid",
             ],
+            (object)[
+                'type' => 'file',
+                'name' => 'file',
+                'icon' => 'docpdf',
+                'prefix' => 'sale',
+                'generable' => true,
+            ],
         ];
         $this->unfuse_fields = [
             '{t}.date' => ':{t}_date',
