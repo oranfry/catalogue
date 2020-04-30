@@ -64,7 +64,7 @@ class sale extends \Linetype
                 'type' => 'file',
                 'name' => 'file',
                 'icon' => 'docpdf',
-                'prefix' => 'sale',
+                'path' => 'sale',
                 'generable' => true,
             ],
         ];
