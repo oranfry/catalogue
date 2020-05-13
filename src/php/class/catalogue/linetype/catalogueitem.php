@@ -44,6 +44,8 @@ class catalogueitem extends \Linetype
 
     public function validate($line)
     {
+        $errors = [];
+
         if ($line->sku == null) {
             $errors[] = 'no sku';
         }

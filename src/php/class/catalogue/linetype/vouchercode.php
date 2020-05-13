@@ -72,15 +72,15 @@ class vouchercode extends \Linetype
     {
         $errors = [];
 
-        if (!$line->code) {
+        if (!@$line->code) {
             $errors[] = 'no code';
         }
 
-        if (!$line->sku && !$line->nzd && !$line->pickup) {
+        if (!@$line->sku && !@$line->nzd && !@$line->pickup) {
             $errors[] = 'please choose an effect for this voucher (sku, nzd, pickup)';
         }
 
-        if ($line->sku && (!$line->quantity || $line->quantity < 0)) {
+        if (@$line->sku && (!@$line->quantity || @$line->quantity < 0)) {
             $errors[] = 'please specify quantity when specifying sku';
         }
 
