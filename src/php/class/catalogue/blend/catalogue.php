@@ -11,10 +11,6 @@ class catalogue extends \Blend
     {
         $this->fields = [
             (object) [
-                'name' => 'icon',
-                'type' => 'icon',
-            ],
-            (object) [
                 'name' => 'sku',
                 'type' => 'text',
             ],
