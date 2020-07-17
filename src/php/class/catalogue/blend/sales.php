@@ -24,12 +24,14 @@ class sales extends \Blend
             (object) [
                 'name' => 'orderid',
                 'type' => 'text',
-                'default' => '',
             ],
             (object) [
                 'name' => 'name',
                 'type' => 'text',
-                'default' => '',
+            ],
+            (object) [
+                'name' => 'email',
+                'type' => 'text',
             ],
         ];
     }
