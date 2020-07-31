@@ -21,11 +21,6 @@ class sale extends \Linetype
                 'main' => true,
             ],
             (object) [
-                'name' => 'orderid',
-                'type' => 'text',
-                'fuse' => '{t}.orderid',
-            ],
-            (object) [
                 'name' => 'name',
                 'type' => 'text',
                 'fuse' => '{t}.name',
@@ -70,7 +65,6 @@ class sale extends \Linetype
         ];
         $this->unfuse_fields = [
             '{t}.date' => ':{t}_date',
-            '{t}.orderid' => ':{t}_orderid',
             '{t}.name' => ':{t}_name',
             '{t}.email' => ':{t}_email',
             '{t}.street' => ':{t}_street',
@@ -152,13 +146,6 @@ class sale extends \Linetype
                 ],
             ],
         ];
-    }
-
-    public function complete($line)
-    {
-        if (!@$line->orderid) {
-            $line->orderid = @$line->order ?: newid();
-        }
     }
 
     public function validate($line)
