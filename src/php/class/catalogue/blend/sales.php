@@ -22,10 +22,6 @@ class sales extends \Blend
                 'main' => true,
             ],
             (object) [
-                'name' => 'orderid',
-                'type' => 'text',
-            ],
-            (object) [
                 'name' => 'name',
                 'type' => 'text',
             ],
