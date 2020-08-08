@@ -54,12 +54,6 @@ class order extends \Linetype
                 'rel' => 'many',
                 'parent_link' => 'orderorderitem',
             ],
-            (object) [
-                'label' => 'vouchercodes',
-                'linetype' => 'vouchercode',
-                'rel' => 'many',
-                'parent_link' => 'ordervouchercode',
-            ],
         ];
     }
 
