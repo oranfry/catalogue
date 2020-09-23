@@ -39,6 +39,11 @@ class order extends \Linetype
                 'type' => 'text',
                 'fuse' => '{t}.postcode',
             ],
+            (object) [
+                'name' => 'vouchercode',
+                'type' => 'text',
+                'fuse' => '{t}.vouchercode',
+            ],
         ];
         $this->unfuse_fields = [
             '{t}.name' => ':{t}_name',
@@ -46,6 +51,7 @@ class order extends \Linetype
             '{t}.street' => ':{t}_street',
             '{t}.suburb' => ':{t}_suburb',
             '{t}.postcode' => ':{t}_postcode',
+            '{t}.vouchercode' => ':{t}_vouchercode',
         ];
         $this->children = [
             (object) [
