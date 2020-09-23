@@ -6,7 +6,7 @@ class customerledger extends \Blend
     public function __construct()
     {
         $this->label = 'Customer Ledger';
-        $this->linetypes = ['customertransaction'];
+        $this->linetypes = ['customerinvoice', 'customertransaction'];
         $this->groupby = 'date';
         $this->fields = [
             (object) [
