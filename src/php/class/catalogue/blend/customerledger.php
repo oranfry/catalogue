@@ -21,6 +21,10 @@ class customerledger extends \Blend
                 'main' => true,
             ],
             (object) [
+                'name' => 'description',
+                'type' => 'text',
+            ],
+            (object) [
                 'name' => 'amount',
                 'type' => 'number',
                 'summary' => 'sum',
