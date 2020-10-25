@@ -15,25 +15,14 @@ class vouchercodes extends \Blend
                 'type' => 'text',
             ],
             (object) [
-                'name' => 'used',
+                'name' => 'nzd',
                 'type' => 'number',
-                'sacrifice' => true,
             ],
             (object) [
-                'name' => 'sku',
+                'name' => 'notes',
                 'type' => 'text',
                 'sacrifice' => true,
             ],
-            (object) [
-                'name' => 'nzd',
-                'type' => 'number',
-                'sacrifice' => true,
-            ],
-            (object) [
-                'name' => 'pickup',
-                'type' => 'number',
-                'sacrifice' => true,
-            ],
-        ];
+       ];
     }
 }

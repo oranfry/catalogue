@@ -15,57 +15,22 @@ class vouchercode extends \Linetype
                 'fuse' => '{t}.code',
             ],
             (object) [
-                'name' => 'used',
-                'type' => 'text',
-                'constrained' => true,
-                'fuse' => "if ({t}.used = 1, 'yes', 'no')",
-            ],
-            (object) [
-                'name' => 'sku',
-                'type' => 'text',
-                'fuse' => '{t}.sku',
-            ],
-            (object) [
-                'name' => 'quantity',
-                'type' => 'number',
-                'fuse' => '{t}.quantity',
-            ],
-            (object) [
                 'name' => 'nzd',
                 'type' => 'number',
                 'fuse' => '{t}.nzd',
             ],
             (object) [
-                'name' => 'pickup',
-                'type' => 'number',
-                'fuse' => '{t}.pickup',
+                'name' => 'notes',
+                'type' => 'text',
+                'fuse' => '{t}.notes',
             ],
         ];
 
         $this->unfuse_fields = [
             '{t}.code' => ':{t}_code',
-            '{t}.used' => "if (:{t}_used = 'yes', 1, 0)",
-            '{t}.sku' => ':{t}_sku',
-            '{t}.quantity' => ':{t}_quantity',
             '{t}.nzd' => ':{t}_nzd',
-            '{t}.pickup' => ':{t}_pickup',
+            '{t}.notes' => ':{t}_notes',
         ];
-    }
-
-    public function complete($line)
-    {
-        if (@$line->used === null) {
-            $line->used = 0;
-        }
-    }
-
-    public function get_suggested_values()
-    {
-        $suggested_values = [];
-
-        $suggested_values['used'] = ['no', 'yes'];
-
-        return $suggested_values;
     }
 
     public function validate($line)
@@ -74,14 +39,6 @@ class vouchercode extends \Linetype
 
         if (!@$line->code) {
             $errors[] = 'no code';
-        }
-
-        if (!@$line->sku && !@$line->nzd && !@$line->pickup) {
-            $errors[] = 'please choose an effect for this voucher (sku, nzd, pickup)';
-        }
-
-        if (@$line->sku && (!@$line->quantity || @$line->quantity < 0)) {
-            $errors[] = 'please specify quantity when specifying sku';
         }
 
         return $errors;
@@ -96,23 +53,7 @@ class vouchercode extends \Linetype
         $printout .= "\n";
         $printout .= str_pad($line->code, 42, " ", STR_PAD_BOTH) . "\n";
         $printout .= "\n";
-
-        $things = [];
-
-        if ($line->sku) {
-            $title = @$skumetas[$line->sku]->title ?: $line->sku;
-            $things[] = "{$line->quantity} x {$title}";
-        }
-
-        if ($line->nzd) {
-            $things[] = "\${$line->nzd} off";
-        }
-
-        if ($line->pickup) {
-            $things[] = "place a pickup order";
-        }
-
-        $printout .= wordwrap("Entitles the bearer to " . implode(', ', $things), 40) . "\n";
+        $printout .= "Entitles the bearer to \${$line->nzd} off\n";
 
         return $printout;
     }
