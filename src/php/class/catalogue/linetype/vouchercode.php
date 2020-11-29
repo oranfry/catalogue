@@ -17,6 +17,7 @@ class vouchercode extends \Linetype
             (object) [
                 'name' => 'nzd',
                 'type' => 'number',
+                'dp' => 2,
                 'fuse' => '{t}.nzd',
             ],
             (object) [
