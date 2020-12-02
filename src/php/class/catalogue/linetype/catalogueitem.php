@@ -35,10 +35,22 @@ class catalogueitem extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.sku' => ':{t}_sku',
-            '{t}.title' => ':{t}_title',
-            '{t}.description' => ':{t}_description',
-            '{t}.price' => ':{t}_price',
+            '{t}.sku' => (object) [
+                'expression' => ':{t}_sku',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.title' => (object) [
+                'expression' => ':{t}_title',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.description' => (object) [
+                'expression' => ':{t}_description',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.price' => (object) [
+                'expression' => ':{t}_price',
+                'type' => 'decimal(18, 2)',
+            ],
         ];
     }
 

@@ -46,9 +46,18 @@ class customertransaction extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.date' => ':{t}_date',
-            '{t}.amount' => ':{t}_amount',
-            '{t}.tax' => ':{t}_tax',
+            '{t}.date' => (object) [
+                'expression' => ':{t}_date',
+                'type' => 'date',
+            ],
+            '{t}.amount' => (object) [
+                'expression' => ':{t}_amount',
+                'type' => 'decimal(18, 2)',
+            ],
+            '{t}.tax' => (object) [
+                'expression' => ':{t}_tax',
+                'type' => 'decimal(18, 2)',
+            ],
         ];
     }
 

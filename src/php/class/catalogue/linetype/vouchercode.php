@@ -28,9 +28,18 @@ class vouchercode extends \Linetype
         ];
 
         $this->unfuse_fields = [
-            '{t}.code' => ':{t}_code',
-            '{t}.nzd' => ':{t}_nzd',
-            '{t}.notes' => ':{t}_notes',
+            '{t}.code' => (object) [
+                'expression' => ':{t}_code',
+                'type' => 'varchar(10)',
+            ],
+            '{t}.nzd' => (object) [
+                'expression' => ':{t}_nzd',
+                'type' => 'decimal(10,2)',
+            ],
+            '{t}.notes' => (object) [
+                'expression' => ':{t}_notes',
+                'type' => 'varchar(255)',
+            ],
         ];
     }
 

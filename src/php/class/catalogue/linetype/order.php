@@ -41,11 +41,26 @@ class order extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.name' => ':{t}_name',
-            '{t}.email' => ':{t}_email',
-            '{t}.street' => ':{t}_street',
-            '{t}.suburb' => ':{t}_suburb',
-            '{t}.postcode' => ':{t}_postcode',
+            '{t}.name' => (object) [
+                'expression' => ':{t}_name',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.email' => (object) [
+                'expression' => ':{t}_email',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.street' => (object) [
+                'expression' => ':{t}_street',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.suburb' => (object) [
+                'expression' => ':{t}_suburb',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.postcode' => (object) [
+                'expression' => ':{t}_postcode',
+                'type' => 'char(4)',
+            ],
         ];
         $this->children = [
             (object) [

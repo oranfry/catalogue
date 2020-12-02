@@ -64,14 +64,38 @@ class sale extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.date' => ':{t}_date',
-            '{t}.name' => ':{t}_name',
-            '{t}.email' => ':{t}_email',
-            '{t}.street' => ':{t}_street',
-            '{t}.suburb' => ':{t}_suburb',
-            '{t}.postcode' => ':{t}_postcode',
-            '{t}.currency' => ':{t}_currency',
-            '{t}.txid' => ":{t}_txid",
+            '{t}.date' => (object) [
+                'expression' => ':{t}_date',
+                'type' => 'date',
+            ],
+            '{t}.name' => (object) [
+                'expression' => ':{t}_name',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.email' => (object) [
+                'expression' => ':{t}_email',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.street' => (object) [
+                'expression' => ':{t}_street',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.suburb' => (object) [
+                'expression' => ':{t}_suburb',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.postcode' => (object) [
+                'expression' => ':{t}_postcode',
+                'type' => 'char(4)',
+            ],
+            '{t}.currency' => (object) [
+                'expression' => ':{t}_currency',
+                'type' => 'char(3)',
+            ],
+            '{t}.txid' => (object) [
+                'expression' => ":{t}_txid",
+                'type' => 'varchar(255)',
+            ],
         ];
     }
 

@@ -26,8 +26,14 @@ class orderitem extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.sku' => ':{t}_sku',
-            '{t}.quantity' => ':{t}_quantity',
+            '{t}.sku' => (object) [
+                'expression' => ':{t}_sku',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.quantity' => (object) [
+                'expression' => ':{t}_quantity',
+                'type' => 'int',
+            ],
         ];
     }
 
