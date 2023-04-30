@@ -1,0 +1,9 @@
+{
+    "name": "oranfry/catalogue",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "catalogue\\": "classes"
+        }
+    }
+}
