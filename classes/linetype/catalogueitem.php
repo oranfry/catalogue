@@ -16,9 +16,9 @@ class catalogueitem extends \jars\Linetype
         $this->simple_float('price', 2);
     }
 
-    public function validate($line)
+    public function validate($line): array
     {
-        $errors = [];
+        $errors = parent::validate($line);
 
         if (!@$line->sku) {
             $errors[] = 'no sku';

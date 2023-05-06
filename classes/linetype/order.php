@@ -6,7 +6,7 @@ class order extends \Linetype
     public function __construct()
     {
         $this->table = 'order';
-        $this->label = 'Order';
+
         $this->fields = [
             (object) [
                 'name' => 'icon',
@@ -40,6 +40,7 @@ class order extends \Linetype
                 'fuse' => '{t}.postcode',
             ],
         ];
+
         $this->unfuse_fields = [
             '{t}.name' => (object) [
                 'expression' => ':{t}_name',
@@ -62,6 +63,7 @@ class order extends \Linetype
                 'type' => 'char(4)',
             ],
         ];
+
         $this->children = [
             (object) [
                 'label' => 'orderitems',
@@ -70,12 +72,5 @@ class order extends \Linetype
                 'parent_link' => 'orderorderitem',
             ],
         ];
-    }
-
-    public function validate($line)
-    {
-        $errors = [];
-
-        return $errors;
     }
 }

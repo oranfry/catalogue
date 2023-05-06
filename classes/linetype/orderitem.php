@@ -6,7 +6,7 @@ class orderitem extends \Linetype
     public function __construct()
     {
         $this->table = 'orderitem';
-        $this->label = 'Order Item';
+
         $this->fields = [
             (object) [
                 'name' => 'icon',
@@ -25,6 +25,7 @@ class orderitem extends \Linetype
                 'fuse' => '{t}.quantity',
             ],
         ];
+
         $this->unfuse_fields = [
             '{t}.sku' => (object) [
                 'expression' => ':{t}_sku',
@@ -37,9 +38,9 @@ class orderitem extends \Linetype
         ];
     }
 
-    public function validate($line)
+    public function validate($line): array
     {
-        $errors = [];
+        $errors = parent::validate($line);
 
         if (!$line->sku) {
             $errors[] = 'No Sku';

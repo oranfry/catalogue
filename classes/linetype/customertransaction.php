@@ -71,9 +71,9 @@ class customertransaction extends \Linetype
         return $suggested_values;
     }
 
-    public function validate($line)
+    public function validate($line): array
     {
-        $errors = [];
+        $errors = parent::validate($line);
 
         if ($line->date == null) {
             $errors[] = 'no date';

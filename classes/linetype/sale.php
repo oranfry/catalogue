@@ -6,7 +6,7 @@ class sale extends \Linetype
     public function __construct()
     {
         $this->table = 'sale';
-        $this->label = 'Sale';
+
         $this->fields = [
             (object) [
                 'name' => 'icon',
