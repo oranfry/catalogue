@@ -4,6 +4,8 @@ namespace catalogue\linetype;
 
 class catalogueitem extends \jars\Linetype
 {
+    use \simplefields\traits\SimpleFields;
+
     public function __construct()
     {
         $this->table = 'catalogueitem';

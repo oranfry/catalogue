@@ -1,4 +1,5 @@
 <?php
+
 namespace catalogue\linetype;
 
 class customertransaction extends \Linetype
