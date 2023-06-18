@@ -1,0 +1,12 @@
+<?php
+
+namespace catalogue\report;
+
+class shippingrules extends \jars\Report
+{
+    function __construct()
+    {
+        $this->listen = ['shippingrule'];
+        $this->sorter = fn ($a, $b) => $a->country <=> $b->country ?: $a->rural <=> $b->rural ?: $a->limit <=> $b->limit;
+    }
+}
