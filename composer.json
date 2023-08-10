@@ -7,6 +7,5 @@
     "name": "oranfry/catalogue",
     "require": {
         "oranfry/simple-fields": "*"
-    },
-    "version": "1.0.0"
+    }
 }
