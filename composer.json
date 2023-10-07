@@ -6,6 +6,6 @@
     },
     "name": "oranfry/catalogue",
     "require": {
-        "oranfry/simple-fields": "*"
+        "oranfry/simple-fields": "^1.0.0"
     }
 }
