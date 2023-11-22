@@ -6,7 +6,12 @@ class orders extends \jars\Report
 {
     function __construct()
     {
-        $this->listen = ['order'];
+        $this->listen = [
+            'order' => (object) [
+                'children' => ['items'],
+            ],
+        ];
+
         $this->sorter = fn ($a, $b) => $a->date <=> $b->date;
 
         $this->classify = fn ($line) => [
