@@ -1,11 +1,11 @@
 {
     "autoload": {
         "psr-4": {
-            "catalogue\\": "classes"
+            "catalogue\\": ""
         }
     },
     "name": "oranfry/catalogue",
     "require": {
-        "oranfry/simple-fields": "^1.0.0"
+        "oranfry/simple-fields": "*"
     }
 }
