@@ -8,6 +8,8 @@ class shippingrule extends \jars\Linetype
 
     public function __construct()
     {
+        parent::__construct();
+
         $this->table = 'shippingrule';
 
         $this->simple_string('country');

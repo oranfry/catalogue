@@ -6,7 +6,12 @@ class catalogue extends \jars\Report
 {
     function __construct()
     {
-        $this->listen = ['catalogueitem'];
+        $this->listen = [
+            'catalogueitem' => (object) [
+                'children' => ['batches'],
+            ],
+        ];
+
         $this->sorter = fn ($a, $b) => $a->sku <=> $b->sku;
     }
 }
