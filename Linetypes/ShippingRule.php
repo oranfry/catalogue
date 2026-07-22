@@ -1,10 +1,12 @@
 <?php
 
-namespace catalogue\linetype;
+namespace OranFry\Catalogue\Linetypes;
 
-class shippingrule extends \jars\Linetype
+use SimpleFields\Traits\SimpleFields;
+
+class ShippingRule extends \OranFry\Jars\Core\Linetype
 {
-    use \simplefields\traits\SimpleFields;
+    use SimpleFields;
 
     public function __construct()
     {

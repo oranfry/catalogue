@@ -1,8 +1,8 @@
 <?php
 
-namespace catalogue\report;
+namespace OranFry\Catalogue\Reports;
 
-class catalogue extends \jars\Report
+class Catalogue extends \OranFry\Jars\Core\Report
 {
     function __construct()
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace catalogue\report;
+namespace OranFry\Catalogue\Reports;
 
-class shippingrules extends \jars\Report
+class ShippingRules extends \OranFry\Jars\Core\Report
 {
     function __construct()
     {

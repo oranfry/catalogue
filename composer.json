@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "catalogue\\": ""
+            "OranFry\\Catalogue\\": ""
         }
     },
     "name": "oranfry/catalogue",
