@@ -2,7 +2,7 @@
 
 namespace OranFry\Catalogue\Linetypes;
 
-use SimpleFields\Traits\SimpleFields;
+use OranFry\SimpleFields\Traits\SimpleFields;
 
 class ShippingRule extends \OranFry\Jars\Core\Linetype
 {
